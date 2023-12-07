@@ -22,7 +22,7 @@ jobs:
         working-directory: .
 
       - name: Start Node.js Application
-        run: npm start
+        run: npm start &
         working-directory: .
 
   newman:
