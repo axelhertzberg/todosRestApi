@@ -43,13 +43,30 @@
 			"item": [
 				{
 					"name": "Post Todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2647bd51-19bd-420d-bb45-1a6184c4d161",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "ce46acbc-ccac-4712-92ab-f167e1ae4e31",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "POST",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"Record video\",\r\n    \"done\": \"false\"\r\n}"
+						},
+						"url": "http://localhost:3000/todos"
 					},
 					"response": []
 				}
