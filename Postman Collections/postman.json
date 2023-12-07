@@ -78,13 +78,44 @@
 			"item": [
 				{
 					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "38df7466-844f-44b1-a94e-48fe827c2caf",
+								"exec": [
+									"pm.test(\"Delete a todo\", () => {\r",
+									"    console.log(pm.response)\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "1a1b5950-1896-4ee7-95dd-8d981f2e0c7f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "DELETE",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/todos?id=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todos"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "100"
+								}
+							]
+						}
 					},
 					"response": []
 				}
