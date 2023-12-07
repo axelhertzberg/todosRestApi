@@ -21,9 +21,6 @@ jobs:
         run: npm install
         working-directory: .
 
-      - name: Start Node.js Application
-        run: npm start &
-        working-directory: .
 
   newman:
     needs: setup-and-run
@@ -39,6 +36,10 @@ jobs:
 
       - name: Install Newman
         run: npm install -g newman
+
+      - name: Start Node.js Application
+        run: npm start &
+        working-directory: .
 
       - name: Run Newman Tests
         run: newman run "Postman Collections/postman.json"
