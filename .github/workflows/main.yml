@@ -19,11 +19,11 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        working-directory: /
+        working-directory: .
 
       - name: Start Node.js Application
         run: npm start
-        working-directory: /
+        working-directory: .
 
   newman:
     needs: setup-and-run
