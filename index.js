@@ -29,8 +29,11 @@ app.get('/todos/:id', (req, res) => {
 
 // Create a new todo
 app.post('/todos', (req, res) => {
-  const newTodo = req.body;
+    console.log("REQ",req)
+    console.log("RES",res)
+  const newTodo = req.query;
   newTodo.id = todos.length + 1;
+  if (!newTodo.text) return res.status(401).json(JSON.stringify({error: "Todo must have a text"}))
   todos.push(newTodo);
   res.status(201).json(newTodo);
 });
