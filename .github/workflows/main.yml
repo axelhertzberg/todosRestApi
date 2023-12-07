@@ -6,10 +6,40 @@ on:
     - master
 
 jobs:
-  newman:
+  setup-and-run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: matt-ball/newman-action@master
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          collection: Postman Collections/postman.json
+          node-version: '16'
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: .
+
+
+  newman:
+    needs: setup-and-run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Start Node.js Application
+        run: npm start &
+        working-directory: .
+
+      - name: Run Newman Tests
+        run: newman run "Postman Collections/postman.json"
