@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "4f450071-ad65-4742-8545-a5f72642e3ad",
+		"name": "TODOSRestApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Get all todos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b629b3fe-f987-4747-8d9c-e05a9b096116",
+								"exec": [
+									"pm.test(\"First test: See if we get todos\", () => {\r",
+									"    pm.expect(pm.response.code).to.eql(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "1e10aa47-336c-4176-a55d-70de73ab122f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/todos"
+					},
+					"response": []
+				}
+			],
+			"id": "00800e3a-344c-4d1d-8bb3-6da36c6c0cb8"
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "Post Todo",
+					"id": "ce46acbc-ccac-4712-92ab-f167e1ae4e31",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "9d0606de-3279-45d8-a822-88e7a00a2842"
+		},
+		{
+			"name": "DELETE",
+			"item": [
+				{
+					"name": "New Request",
+					"id": "1a1b5950-1896-4ee7-95dd-8d981f2e0c7f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "723220b1-5902-4bf2-a097-ea2cd01a6a05"
+		},
+		{
+			"name": "UPDATE",
+			"item": [],
+			"id": "d50adcb5-dd3a-49d1-a33c-80cf0c3689fd"
+		}
+	]
+}
